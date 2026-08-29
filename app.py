@@ -14,8 +14,8 @@ except FileNotFoundError as e:
     st.stop()
 
 # Title of the app
-st.title('Alzheimer's Disease Diagnosis Predictor')
-st.write('Enter patient details to predict the likelihood of Alzheimer's Disease.')
+st.title("Alzheimer's Disease Diagnosis Predictor")
+st.write("Enter patient details to predict the likelihood of Alzheimer's Disease.")
 
 # Sidebar for user inputs
 st.sidebar.header('Patient Input Features')
@@ -32,7 +32,7 @@ def user_input_features():
     physical_activity = st.sidebar.slider('Physical Activity (hours/week)', 0.0, 10.0, 5.0)
     diet_quality = st.sidebar.slider('Diet Quality', 0.0, 10.0, 5.0)
     sleep_quality = st.sidebar.slider('Sleep Quality', 0.0, 10.0, 5.0)
-    family_history = st.sidebar.selectbox('Family History of Alzheimer's (0=No, 1=Yes)', [0, 1])
+    family_history = st.sidebar.selectbox("Family History of Alzheimer's (0=No, 1=Yes)", [0, 1])
     cardiovascular_disease = st.sidebar.selectbox('Cardiovascular Disease (0=No, 1=Yes)', [0, 1])
     diabetes = st.sidebar.selectbox('Diabetes (0=No, 1=Yes)', [0, 1])
     depression = st.sidebar.selectbox('Depression (0=No, 1=Yes)', [0, 1])
@@ -105,7 +105,7 @@ prediction = model.predict(scaled_input)
 prediction_proba = model.predict_proba(scaled_input)
 
 st.subheader('Prediction')
-alzheimers_diagnosis = np.array(['No Alzheimer's', 'Alzheimer's']) # Using np.array for indexing
+alzheimers_diagnosis = np.array(["No Alzheimer's", "Alzheimer's"]) # Using np.array for indexing
 st.write(alzheimers_diagnosis[prediction][0])
 
 st.subheader('Prediction Probability')
